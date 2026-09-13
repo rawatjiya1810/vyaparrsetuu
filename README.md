@@ -4,106 +4,254 @@ A simple, trustworthy, AI-powered digital advisory platform designed specificall
 
 ---
 
-## Netlify Deployment Guide
 
-Follow these steps to deploy VyaparSetu from GitHub to Netlify:
 
-1. **Extract the ZIP archive**:
-   Extract `VyaparSetu-Netlify-Deploy.zip` to your computer.
+### AI-Driven Hyperlocal Business Advisory & Financial Structuring Assistant for Rural Micro-Entrepreneurs
 
-2. **Create a GitHub Repository**:
-   - Go to [GitHub](https://github.com/) and create a new repository (e.g., `vyaparsetu`).
-   - Push the extracted codebase to your repository:
-     ```bash
-     git init
-     git add .
-     git commit -m "Initial VyaparSetu production commit"
-     git branch -M main
-     git remote add origin https://github.com/<your-username>/vyaparsetu.git
-     git push -u origin main
-     ```
+> **Tell us about your business. We'll tell you what opportunity exists around you, why it exists, and what you should do next.**
 
-3. **Deploy on Netlify**:
-   - Log in to your [Netlify Dashboard](https://app.netlify.com/).
-   - Click **Add new site** $\rightarrow$ **Import an existing project**.
-   - Select **GitHub** and authorize access to your `vyaparsetu` repository.
+GramMarg is an AI-powered decision-support platform designed to help local and rural micro-entrepreneurs understand their business environment, identify hyperlocal opportunities, improve their growth readiness, and take practical actions for business growth.
 
-4. **Build Settings Verification**:
-   - **Framework Preset**: Vite
-   - **Build Command**: `npm run build`
-   - **Publish Directory**: `dist`
-   *(Netlify automatically detects these settings from `netlify.toml`)*
-
-5. **Environment Variables Configuration**:
-   - In Netlify, go to **Site settings** $\rightarrow$ **Environment variables**.
-   - (Optional) Add `VITE_API_BASE_URL` if connecting to a separate production backend server.
-   - Click **Deploy Site**.
-
-6. **Access Deployed Application**:
-   - Open your generated Netlify URL (e.g., `https://vyaparsetu.netlify.app`) and perform post-deployment verification.
+The platform combines **business information, hyperlocal market intelligence, business assessment, opportunity detection, government support matching, and personalized recommendations** into one simple and accessible experience.
 
 ---
 
-## Environment Variables
+## 🚀 Problem
 
-| Variable Name | Required | Purpose / Description |
-| :--- | :--- | :--- |
-| `VITE_API_BASE_URL` | Optional | Set to your hosted production backend server URL (e.g., `https://api.vyaparsetu.in`). If left empty, the frontend uses relative `/api/advisor/chat` endpoints with automatic local intelligence fallback. |
+Local and rural entrepreneurs often make important business decisions without access to:
 
-> **Security Note**: Never commit API keys or secret credentials to frontend source code or Netlify frontend environment variables. Confidential keys (such as `GEMINI_API_KEY`) belong on your secure backend server.
+- Reliable local market insights
+- Information about nearby competitors and complementary businesses
+- Personalized business guidance
+- Easy-to-understand financial and growth assessment
+- Awareness of relevant government/business support opportunities
+- A structured roadmap for what to do next
 
----
+Existing platforms often provide generic information or static directories, but they don't answer the most important question:
 
-## Backend & CORS Configuration
+> **"What should I do next for my specific business?"**
 
-- The frontend calls `/api/advisor/chat` relative to `VITE_API_BASE_URL` or the current domain.
-- **CORS Action**: If your backend server is hosted separately (e.g., on Railway, Render, Heroku, or AWS), add your final Netlify site URL (e.g., `https://vyaparsetu.netlify.app`) to your backend's allowed CORS origins list.
-- **Offline / Standalone Resilience**: If the backend server is temporarily unreachable or unconfigured, VyaparSetu automatically falls back to its built-in local intelligence engine to ensure non-stop user advisory service.
-
----
-
-## Netlify SPA Routing Configuration
-
-VyaparSetu is built as a single-page application (SPA). This repository includes a pre-configured `netlify.toml` file containing:
-
-```toml
-[build]
-  command = "npm run build"
-  publish = "dist"
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-```
-
-This prevents 404 errors when refreshing direct routes such as `/dashboard`, `/market-scan`, `/growth-score`, `/advisor`, or `/settings`.
+GramMarg aims to bridge this gap by converting complex data into simple, actionable business guidance.
 
 ---
 
-## Post-Deployment Verification Checklist
+## 💡 Our Solution
 
-Verify the deployed live site against this checklist:
+GramMarg creates a **dynamic digital profile of a business** and connects it with its surrounding business ecosystem.
 
-- [ ] **Homepage**: Loads with hero headline, trust badges, and interactive live explorer widget
-- [ ] **Get Started**: Opens registration modal cleanly
-- [ ] **Login / Demo**: 1-Click Demo login works and loads Ramesh Kumar's dashboard
-- [ ] **Dashboard Overview**: Displays Growth Score, Quick Actions, and Top Opportunities
-- [ ] **Navigation**: Sidebar and top bar navigation switch views without page reload
-- [ ] **Language Switcher**: Dynamically translates interface between English and Hindi
-- [ ] **Business DNA**: Views and updates business profile details
-- [ ] **Market Scan**: Interactive map, local competitor filters, supplier savings
-- [ ] **Growth Score**: Breakdown of operational, digital, financial, and market scores
-- [ ] **Opportunities**: Recommended hyperlocal gaps and B2B connections
-- [ ] **Financial Structure**: Working capital calculator, cash flow charts, Mudra/SVANidhi matches
-- [ ] **Risk Check**: Stress test simulation and risk mitigation advisories
-- [ ] **Business Plan**: Formal micro-enterprise business plan generator
-- [ ] **30-Day Plan**: Step-by-step 4-week task checklist with task modals
-- [ ] **Community Connect**: Local merchant network directory & proposal composer
-- [ ] **VyaparSetu Advisor**: AI advisory chat streaming and responses
-- [ ] **Voice Assistant**: Mic button captures voice input in native languages
-- [ ] **Settings**: Language preferences, WhatsApp/Scheme alert toggles
-- [ ] **Help & Support**: WhatsApp desk, toll-free helpline, and localized FAQs
-- [ ] **Official Logo & Favicon**: Crisp transparent logo renders across headers/drawers
-- [ ] **Direct URLs**: Page refresh on `/dashboard` or `/advisor` does not 404
-- [ ] **Mobile Responsiveness**: Drawer menu, responsive grid, and touch targets work on mobile
+### Business → Location → Customers → Market → Opportunities → Action
+
+Instead of simply displaying information, GramMarg analyzes the available information and turns it into:
+
+**Data → Insight → Opportunity → Recommendation → Action**
+
+---
+
+# ✨ Core Features
+
+## 1. Business DNA
+
+Creates a structured digital profile of the entrepreneur and their business.
+
+It captures:
+
+- Business name and category
+- Products/services
+- Location
+- Customer types
+- Customer acquisition methods
+- Business challenges
+- Growth goals
+
+The module is designed as a simple guided experience rather than a complicated form.
+
+---
+
+## 2. Hyperlocal Market Scan
+
+Helps entrepreneurs understand what is happening around their business.
+
+The system can identify:
+
+- Nearby similar businesses
+- Complementary businesses
+- Potential suppliers
+- Potential customers
+- Local business concentration
+- Opportunity areas
+- Potential business connections
+
+### Community Connect
+
+GramMarg can identify complementary businesses that may be able to work together.
+
+For example:
+
+**Raw Material Supplier → Manufacturer → Retailer**
+
+This can help entrepreneurs discover potential local partnerships and B2B opportunities.
+
+---
+
+## 3. Business Growth Score
+
+Provides a simple assessment of the business's current growth readiness.
+
+The score considers areas such as:
+
+- Local Market
+- Customer Reach
+- Digital Presence
+- Financial Readiness
+- Government/Support Access
+
+The goal is not to overwhelm the entrepreneur with financial analytics, but to clearly show:
+
+> **What is working and what should be improved first?**
+
+> **Note:** The Growth Score is not a credit score and does not determine loan eligibility.
+
+---
+
+## 4. Opportunity & Gap Detector
+
+Identifies opportunities and underserved areas around the business.
+
+Examples include:
+
+- Service gaps
+- Customer gaps
+- Market gaps
+- Supplier opportunities
+- Local demand opportunities
+- Relevant business/government support opportunities
+
+Each opportunity is presented with:
+
+**Opportunity → Evidence → Why it matters → Possible action**
+
+This makes the recommendations explainable instead of simply giving an AI-generated suggestion.
+
+---
+
+## 5. Business Advisor
+
+The Business Advisor provides prioritized, business-specific recommendations based on:
+
+- Business DNA
+- Hyperlocal Market Scan
+- Growth Score
+- Detected opportunities
+- Previous actions
+
+Instead of behaving like a generic chatbot, the advisor focuses on practical recommendations.
+
+Each recommendation explains:
+
+### What?
+What should the entrepreneur do?
+
+### Why?
+Why is this recommendation relevant?
+
+### Evidence
+What information supports the recommendation?
+
+### Impact
+How could it help the business?
+
+### Action
+What should the entrepreneur do next?
+
+---
+
+## 6. Personalized 30-Day Action Plan
+
+Converts recommendations into a practical execution roadmap.
+
+The plan is divided into:
+
+- Week 1
+- Week 2
+- Week 3
+- Week 4
+
+Each task includes:
+
+- What to do
+- Why it matters
+- Estimated time
+- Difficulty
+- Expected outcome
+- Completion tracking
+
+The system focuses on one practical action at a time instead of overwhelming the entrepreneur with a large task list.
+
+---
+
+# 🎯 Key Differentiators
+
+### 1. Business Digital Twin
+
+GramMarg builds a dynamic representation of the business based on:
+
+**Business + Location + Customers + Market + Support + Opportunities**
+
+This allows recommendations to be specific to the entrepreneur rather than generic.
+
+### 2. Hyperlocal Opportunity Intelligence
+
+Instead of only looking at broad national or state-level information, GramMarg focuses on the entrepreneur's surrounding business ecosystem.
+
+### 3. Opportunity Gap Detection
+
+The platform doesn't just show existing businesses.
+
+It attempts to identify:
+
+> **What is missing?**
+
+For example:
+
+> "24 similar businesses operate nearby, but only 3 offer home delivery."
+
+This converts local market data into a potential business opportunity.
+
+### 4. Explainable Recommendations
+
+Every important recommendation is accompanied by the reasoning and evidence behind it.
+
+### 5. Government Data → Business Action
+
+Instead of recreating government dashboards or scheme directories, GramMarg aims to convert relevant support information into personalized opportunities and actions.
+
+---
+
+# 🧭 Product Journey
+
+```text
+                GRAMMARG
+                    │
+                    ▼
+              BUSINESS DNA
+             "Who are you?"
+                    │
+                    ▼
+        HYPERLOCAL MARKET SCAN
+       "What's happening around you?"
+                    │
+                    ▼
+          BUSINESS GROWTH SCORE
+          "How are you doing?"
+                    │
+                    ▼
+       OPPORTUNITY & GAP DETECTOR
+          "What are you missing?"
+                    │
+                    ▼
+           BUSINESS ADVISOR
+           "What should you do?"
+                    │
+                    ▼
+      PERSONALIZED 30-DAY PLAN
+          "How do you execute it?"
