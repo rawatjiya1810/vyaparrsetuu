@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+  --font-heading: "Outfit", "Noto Sans Devanagari", sans-serif;
+  --font-display: "Sora", "Outfit", sans-serif;
+  --font-gov: "Merriweather", "Noto Sans Devanagari", serif;
+  --font-sans: "Plus Jakarta Sans", "Noto Sans Devanagari", sans-serif;
+  --font-body: "Plus Jakarta Sans", "Noto Sans Devanagari", sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    color: #172B35;
+    background-color: #FFFDFC;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: #172B35;
+    background-color: #FFFDFC;
+    line-height: 1.5;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+    color: #172B35;
+  }
+
+  p {
+    color: #2D3E46;
+    line-height: 1.6;
+  }
+}
+
+/* Glassmorphic utilities */
+.glass-card {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 12px 32px 0 rgba(1, 77, 78, 0.06);
+}
+
+.glass-card-dark {
+  background: rgba(1, 55, 56, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 16px 36px 0 rgba(0, 0, 0, 0.25);
+}
+
+.glass-pill {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+/* Continuous Marquee Ticker */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+    width: auto;
+    overflow-x: auto;
+  }
+}
+
+/* Hide scrollbar visuals completely for Chrome, Safari, Edge, Firefox while keeping independent scrolling */
+.no-scrollbar::-webkit-scrollbar,
+.scrollbar-none::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.no-scrollbar,
+.scrollbar-none {
+  -ms-overflow-style: none !important;  /* IE and Edge */
+  scrollbar-width: none !important;  /* Firefox */
+}
+

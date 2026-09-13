@@ -1,0 +1,11 @@
+{
+  "name": "VyaparSetu",
+  "description": "A simple, trustworthy, AI-powered digital advisory platform designed specifically for local and rural entrepreneurs in India.",
+  "requestFramePermissions": [
+    "geolocation",
+    "microphone"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
